@@ -8,6 +8,7 @@ var burger = require("../models/burger.js");
 // Create all our routes and set up logic within those routes where required.
 router.get("/", function (req, res) {
   burger.all(function (data) {
+    console.log("burgers", data);
     var hbsObject = {
       burger: data
     };
@@ -34,7 +35,7 @@ router.put("/api/burger/:id", function (req, res) {
   console.log("condition", condition);
 
   burger.update({
-    devoured: req.body.sleepy
+    devoured: req.body.devoured
   }, condition, function (result) {
     if (result.changedRows == 0) {
       // If no rows were changed, then the ID must not exist, so 404
@@ -60,3 +61,5 @@ router.delete("/api/burger/:id", function (req, res) {
 
 // Export routes for server.js to use.
 module.exports = router;
+
+

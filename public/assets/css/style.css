@@ -17,3 +17,19 @@ li {
 .form-group {
   margin-bottom: 5px;
 }
+
+.container {
+  display: flex;
+}
+
+.devoured-burger {
+  width: 50%;
+}
+
+.waiting-devoured {
+  width: 50%;
+}
+
+
+
+
